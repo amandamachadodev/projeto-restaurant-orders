@@ -8,5 +8,5 @@ def analyze_log(path_to_file):
         with open(path_to_file) as file:
             read = csv.reader(file)
             return list(read)
-    except:
+    except FileNotFoundError:
         raise FileNotFoundError(f"Arquivo inexistente: '{path_to_file}'")
